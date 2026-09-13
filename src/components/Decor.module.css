@@ -1,0 +1,77 @@
+.decor {
+  position: absolute;
+  display: inline-block;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+  will-change: transform;
+}
+
+.decorImg {
+  display: block;
+  height: auto;
+}
+
+/* Burung: melayang naik-turun pelan sambil sedikit maju-mundur,
+   seperti mengepakkan sayap di udara. */
+.float {
+  animation: decorFloat 3.6s ease-in-out infinite;
+}
+
+/* Kupu-kupu: terbang meliuk (zig-zag) lebih hidup daripada burung. */
+.flutter {
+  animation: decorFlutter 3.2s ease-in-out infinite;
+}
+
+/* Kilauan/sparkle: berkedip pelan. */
+.twinkle {
+  animation: decorTwinkle 2.4s ease-in-out infinite;
+}
+
+@keyframes decorFloat {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(4px, -12px);
+  }
+}
+
+@keyframes decorFlutter {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(6px, -10px) rotate(8deg);
+  }
+  50% {
+    transform: translate(-4px, -18px) rotate(-6deg);
+  }
+  75% {
+    transform: translate(7px, -6px) rotate(6deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes decorTwinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float,
+  .flutter,
+  .twinkle {
+    animation: none;
+  }
+}

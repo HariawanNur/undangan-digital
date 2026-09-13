@@ -1,0 +1,8 @@
+.wave {
+  display: block;
+  width: 100%;
+  height: 34px;
+}
+.wave path {
+  fill: var(--paper-2);
+}

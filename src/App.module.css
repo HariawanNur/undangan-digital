@@ -1,0 +1,65 @@
+.stage {
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  /* Awan tersebar di sepanjang halaman (menembus semua section berlatar
+     langit biru), persis seperti tekstur langit di PDF -- bukan cuma
+     gradasi polos. Kartu putih/hijau/krem section lain otomatis
+     menimpa awan ini karena z-index normal flow, sama seperti di PDF. */
+  background-image:
+    url("./assets/images/cloud.webp"),
+    url("./assets/images/cloud-alt.webp"),
+    url("./assets/images/cloud-alt.webp"),
+    url("./assets/images/cloud.webp"),
+    url("./assets/images/cloud.webp"),
+    url("./assets/images/cloud-alt.webp"),
+    url("./assets/images/cloud-alt.webp"),
+    url("./assets/images/cloud.webp"),
+    url("./assets/images/cloud.webp"),
+    url("./assets/images/cloud-alt.webp"),
+    url("./assets/images/cloud-alt.webp"),
+    url("./assets/images/cloud.webp"),
+    linear-gradient(180deg, #eaf3fb 0%, #dcebf7 35%, #eef5fb 100%);
+  background-repeat: no-repeat;
+  background-position:
+    8% 2%,
+    88% 7%,
+    6% 15%,
+    92% 21%,
+    8% 32%,
+    90% 39%,
+    6% 50%,
+    90% 58%,
+    8% 68%,
+    90% 76%,
+    6% 86%,
+    90% 94%,
+    0 0;
+  background-size:
+    280px auto,
+    240px auto,
+    260px auto,
+    240px auto,
+    280px auto,
+    250px auto,
+    260px auto,
+    280px auto,
+    250px auto,
+    240px auto,
+    260px auto,
+    250px auto,
+    100% 100%;
+  overflow: hidden;
+}
+
+.main {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.3s;
+}
+
+.show {
+  opacity: 1;
+}

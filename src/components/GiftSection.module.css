@@ -1,0 +1,113 @@
+.titleWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 20px;
+}
+
+.ribbon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  max-width: clamp(420px, 40vw, 680px);
+  height: auto;
+  z-index: 1;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: #3b3564;
+  font-size: clamp(40px, 4.4vw, 62px);
+  margin: 0;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ownerName {
+  font-family: var(--font-script);
+  font-size: clamp(26px, 2.6vw, 36px);
+  color: #3b3564;
+  margin: 0 0 4px;
+}
+
+.label {
+  font-size: clamp(14px, 1.4vw, 17px);
+  font-weight: 700;
+  color: #1c3a63;
+  margin: 0;
+}
+
+.value {
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: #1c3a63;
+  margin: 2px 0 10px;
+}
+
+.copyBtn {
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 700;
+  border: none;
+  background: var(--rose);
+  color: #fff;
+  border-radius: 20px;
+  padding: 7px 22px;
+  cursor: pointer;
+}
+
+.addressBlock {
+  text-align: center;
+  margin-top: 34px;
+}
+.giftWord {
+  font-family: var(--font-script);
+  font-size: clamp(46px, 5vw, 68px);
+  color: var(--rose);
+  margin: 0 0 14px;
+}
+.addressValue {
+  font-size: clamp(14px, 1.4vw, 17px);
+  color: #1c3a63;
+  font-weight: 600;
+  max-width: clamp(280px, 28vw, 440px);
+  margin: 0 auto 4px;
+  line-height: 1.6;
+}
+.addressOwner {
+  font-family: var(--font-script);
+  font-size: clamp(18px, 1.8vw, 24px);
+  color: var(--rose);
+  margin: 0 0 12px;
+}
+
+.decorWrap {
+  position: relative;
+  margin: 30px calc(-1 * var(--section-pad-x)) 0;
+}
+.catBikeImg {
+  width: 55%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: block;
+  height: auto;
+}

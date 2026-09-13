@@ -1,0 +1,45 @@
+/*
+  Kelas utilitas yang dipakai berulang oleh beberapa komponen section
+  (Couple, EventDetails, Gallery, Doa, Rsvp, GiftSection).
+  Sengaja bukan CSS module supaya bisa dipakai lintas komponen dengan
+  nama kelas yang sama (mis. "section-title" di semua section).
+*/
+
+:root {
+  /* Padding horizontal section, dipakai juga oleh gambar-gambar yang
+     sengaja "bleed" ke tepi (lihat --section-pad-x di komponen lain)
+     supaya keduanya selalu selaras di ukuran layar berapa pun. */
+  --section-pad-x: clamp(24px, 5.5vw, 70px);
+}
+
+.section {
+  padding: clamp(56px, 6vw, 88px) var(--section-pad-x);
+  position: relative;
+}
+
+.section-alt {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.eyebrow {
+  display: block;
+  text-align: center;
+  font-size: clamp(12px, 1.2vw, 15px);
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(30px, 3.2vw, 46px);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.section-lead {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: clamp(14px, 1.3vw, 17px);
+  margin: 0 0 30px;
+}

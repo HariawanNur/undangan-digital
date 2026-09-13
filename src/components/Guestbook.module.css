@@ -1,0 +1,69 @@
+.list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+  gap: 8px;
+}
+
+.name {
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.status {
+  font-size: 11px;
+  color: var(--sage);
+  white-space: nowrap;
+}
+.no {
+  color: var(--rose);
+}
+
+.msg {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.empty {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding: 10px 0;
+}
+
+.moreBtn {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--rose);
+  background: transparent;
+  color: var(--rose);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.moreBtn:hover {
+  background: var(--rose);
+  color: #fff;
+}

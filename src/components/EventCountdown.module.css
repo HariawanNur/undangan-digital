@@ -1,0 +1,27 @@
+.fenceWrap {
+  margin: 30px calc(-1 * var(--section-pad-x)) 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fenceImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Bunga ditumpuk menutupi kira-kira separuh bagian bawah pagar, jadi
+   satu ilustrasi pembatas menyatu, persis seperti komposisi di PDF.
+   margin-top negatif dalam % dihitung dari lebar kontainer (bukan
+   tinggi gambar bunga), jadi rasio tumpang-tindihnya tetap konsisten
+   di semua ukuran layar. */
+.fenceFlowersImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: -10%;
+  position: relative;
+  z-index: 2;
+}

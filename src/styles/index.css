@@ -1,0 +1,120 @@
+/* Font asli undangan: Railey (script) & Sniglet (sans bulat/playful).
+   File resminya sudah ditaruh di src/assets/fonts/ dan dideklarasikan
+   di sini, jadi tidak perlu lagi memuat Google Fonts sebagai padanan. */
+@font-face {
+  font-family: "Railey";
+  src: url("../assets/fonts/Railey-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sniglet";
+  src: url("../assets/fonts/Sniglet-Regular.otf") format("opentype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ink: #2b4a4e;
+  --ink-soft: #5c7a78;
+  --paper: #f5efe2;
+  --paper-2: #ece2cc;
+  --card: #fbf7ed;
+  --rose: #bd7f6e;
+  --sage: #7e9985;
+  --gold: #ad8748;
+  --line: rgba(43, 74, 78, 0.22);
+  --shadow: rgba(43, 74, 78, 0.12);
+
+  --font-script: "Railey", "Beau Rivage", cursive;
+  --font-sans: "Sniglet", "Quicksand", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #efe7d6;
+    --ink-soft: #b9c7c3;
+    --paper: #1b2626;
+    --paper-2: #233130;
+    --card: #243332;
+    --rose: #d89c8b;
+    --sage: #9bb6a2;
+    --gold: #cba560;
+    --line: rgba(239, 231, 214, 0.18);
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #efe7d6;
+  --ink-soft: #b9c7c3;
+  --paper: #1b2626;
+  --paper-2: #233130;
+  --card: #243332;
+  --rose: #d89c8b;
+  --sage: #9bb6a2;
+  --gold: #cba560;
+  --line: rgba(239, 231, 214, 0.18);
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #eaf3fb 0%, #dcebf7 40%, #eaf3fb 100%);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-sans);
+  margin: 0;
+  font-weight: 600;
+}
+
+.script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  line-height: 1;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 2px;
+}

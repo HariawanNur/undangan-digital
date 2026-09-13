@@ -1,0 +1,86 @@
+.title {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: #3b3564;
+  font-size: clamp(40px, 4.4vw, 62px);
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 12px;
+}
+
+.person {
+  text-align: center;
+  position: relative;
+}
+
+.frameWrap {
+  position: relative;
+  width: clamp(250px, 22vw, 380px);
+  max-width: 62%;
+  margin: 0 auto 14px;
+}
+.frameImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.photo {
+  position: absolute;
+  top: 10.5%;
+  left: 12%;
+  width: 75%;
+  height: 79%;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.name {
+  font-size: clamp(21px, 2vw, 28px);
+  font-weight: 700;
+  color: #1c3a63;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: clamp(13px, 1.2vw, 16px);
+  color: var(--ink-soft);
+  max-width: clamp(260px, 22vw, 380px);
+  margin: 0 auto;
+}
+
+.igIcon {
+  display: block;
+  width: clamp(34px, 3vw, 46px);
+  margin: 10px auto 0;
+  transition: transform 0.2s ease;
+}
+.igIcon:hover,
+.igIcon:focus-visible {
+  transform: scale(1.12);
+}
+.igIcon img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Windmill + kucing kembali jadi banner utuh yang bleed ke tepi
+   (sesuai PDF asli), bukan dipotong jadi aksen pojok. Kontainer utama
+   sekarang sudah dibatasi wajar (max 760px) jadi banner ini otomatis
+   ikut aman, tidak lagi melar raksasa di layar sangat lebar. */
+.meadowWrap {
+  position: relative;
+  margin: 30px calc(-1 * var(--section-pad-x)) 0;
+}
+.meadowImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}

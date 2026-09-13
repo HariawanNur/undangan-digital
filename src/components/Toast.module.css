@@ -1,0 +1,19 @@
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+  transform: translate(-50%, 140%);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  padding: 11px 22px;
+  border-radius: 30px;
+  z-index: 80;
+  transition: transform 0.35s cubic-bezier(0.7, 0, 0.2, 1);
+  max-width: 80%;
+  text-align: center;
+}
+
+.show {
+  transform: translate(-50%, 0);
+}

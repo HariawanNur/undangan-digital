@@ -1,0 +1,66 @@
+.title {
+  text-align: center;
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: #3b3564;
+  font-size: clamp(34px, 3.6vw, 50px);
+  margin-bottom: 20px;
+}
+
+.textBlock {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.day {
+  font-size: clamp(15px, 1.5vw, 19px);
+  font-weight: 700;
+  color: #1c3a63;
+  margin-bottom: 8px;
+}
+.time {
+  font-size: clamp(14px, 1.4vw, 18px);
+  color: var(--rose);
+  font-weight: 600;
+  margin: 0;
+}
+.lokasiLabel {
+  margin-top: 20px;
+  font-size: clamp(12px, 1.2vw, 15px);
+  letter-spacing: 0.12em;
+  color: var(--rose);
+  font-weight: 700;
+}
+.venue {
+  font-size: clamp(15px, 1.5vw, 19px);
+  font-weight: 700;
+  color: var(--rose);
+  margin-top: 2px;
+}
+.address {
+  font-size: clamp(13px, 1.3vw, 16px);
+  color: #1c3a63;
+  max-width: clamp(260px, 26vw, 420px);
+  margin: 8px auto 16px;
+  line-height: 1.6;
+}
+.mapsBtn {
+  display: inline-block;
+  font-size: clamp(13px, 1.3vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1c3a63;
+  background: #fbe9ec;
+  border-radius: 30px;
+  padding: 10px 30px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.castleWrap {
+  margin: 30px calc(-1 * var(--section-pad-x)) 0;
+}
+.castleImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}

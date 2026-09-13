@@ -27,6 +27,15 @@ export default function Cover({ guestName, opened, onOpen }) {
             <Decor src={bird} size={24} style={{ bottom: "18%", right: "-8%" }} flip motion="float" delay={1.7} />
           </div>
 
+          <div className={styles.guestBlock}>
+            <p className={styles.guestLabel}>Kepada Yth.</p>
+            <p className={styles.guestLabel}>Bapak/Ibu/Sdr/i</p>
+            <div className={styles.guestPill}>
+              <img src={pillLabel} alt="" className={styles.pillImg} />
+              <span className={styles.guestName}>{guestName}</span>
+            </div>
+          </div>
+
           <button className={styles.openBtn} onClick={onOpen} aria-label="Buka undangan">
             <img src={pillLabel} alt="" className={styles.pillImg} />
             <span className={styles.pillText}>Open</span>
@@ -35,14 +44,6 @@ export default function Cover({ guestName, opened, onOpen }) {
 
         <div className={styles.illustration}>
           <img src={coverCouple} alt={`${couple.groom.name} & ${couple.bride.name}`} className={styles.coupleImg} />
-          <div className={styles.guestPill}>
-            <img src={pillLabel} alt="" className={styles.pillImg} />
-            <div className={styles.guestText}>
-              <span className={styles.guestLabel}>Kepada Yth.</span>
-              <span className={styles.guestName}>{guestName}</span>
-              <span className={styles.guestLabel}>Bapak/Ibu/Sdr/i</span>
-            </div>
-          </div>
         </div>
 
         <p className={styles.eventDate}>{event.dayDate}</p>

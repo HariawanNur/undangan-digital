@@ -31,10 +31,6 @@
   pointer-events: none;
 }
 
-/* Bungkus konten cover: latar (langit+awan) di atas tetap penuh selebar
-   browser, tapi isi cover (nama, tombol Open, foto, tanggal) tetap jadi
-   satu kolom rapi di tengah -- melebar bertahap mengikuti .main supaya
-   keduanya senada di layar besar. */
 .coverInner {
   min-height: 100%;
   width: 100%;
@@ -97,6 +93,39 @@
   margin: -2px 0;
 }
 
+.guestBlock {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guestLabel {
+  margin: 0;
+  font-size: clamp(13px, 1.3vw, 17px);
+  color: #3b3564;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.guestPill {
+  position: relative;
+  margin-top: 8px;
+  width: clamp(180px, 17vw, 280px);
+}
+
+.guestName {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-script);
+  font-size: clamp(20px, 2.2vw, 32px);
+  color: #3b3564;
+  line-height: 1.15;
+}
+
 .openBtn {
   position: relative;
   margin-top: 14px;
@@ -123,9 +152,6 @@
   text-shadow: none;
 }
 
-/* Bungkus ilustrasi dibiarkan menyesuaikan tinggi gambar aslinya (bukan
-   dipaksa mengisi sisa layar) supaya posisi pill nama tamu di atasnya
-   selalu tepat menempel di foto, di layar tinggi maupun pendek. */
 .illustration {
   position: relative;
   width: 100%;
@@ -139,37 +165,6 @@
   max-width: clamp(300px, 32vw, 540px);
   height: auto;
   display: block;
-}
-
-.guestPill {
-  position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 58%;
-  max-width: clamp(210px, 20vw, 360px);
-  z-index: 4;
-}
-.guestText {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1px;
-  text-align: center;
-}
-.guestLabel {
-  font-size: clamp(10px, 1vw, 14px);
-  color: #3b3564;
-  font-weight: 600;
-}
-.guestName {
-  font-family: var(--font-script);
-  font-size: clamp(18px, 2vw, 28px);
-  color: #3b3564;
-  line-height: 1.15;
 }
 
 .eventDate {

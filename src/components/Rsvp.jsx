@@ -53,8 +53,23 @@ export default function Rsvp() {
 
       <RsvpForm onSubmit={handleSubmit} />
 
-      <div className={styles.summary}>
-        <p className={styles.summaryTitle}>Ringkasan Tamu</p>
+            <div className={styles.summary}>
+        <div className={styles.summaryHeader}>
+          <p className={styles.summaryTitle}>Ringkasan Tamu</p>
+          <button
+            type="button"
+            className={styles.exportIconBtn}
+            onClick={handleExport}
+            aria-label="Unduh Excel Kehadiran"
+            title="Unduh Excel Kehadiran"
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 3v12" />
+              <path d="M7 10l5 5 5-5" />
+              <path d="M5 21h14" />
+            </svg>
+          </button>
+        </div>
         <div className={styles.summaryRow}>
           <div className={styles.summaryCell}>
             <span>{totalTamu}</span>
@@ -69,9 +84,6 @@ export default function Rsvp() {
             <label>Tidak Hadir</label>
           </div>
         </div>
-        <button type="button" className={styles.exportBtn} onClick={handleExport}>
-          ⬇ Unduh Excel Kehadiran
-        </button>
       </div>
 
       <div className={styles.guestbookCard}>

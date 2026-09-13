@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 // Key baru (v4) supaya semua data uji-coba lama (v2, v3) otomatis
 // diabaikan / bersih -- dipakai tiap kali perlu "reset" data RSVP sebelum
 // undangan disebar ke tamu asli.
-const STORAGE_KEY = "rsvp_risky_cita_v5"; // naikin dari v4 ke v5
+const STORAGE_KEY = "rsvp_risky_cita_v6"; // naikin dari v4 ke v5
 const LEGACY_KEYS = [
   "rsvp_risky_cita",
   "rsvp_risky_cita_v2",
   "rsvp_risky_cita_v3",
-  "rsvp_risky_cita_v4", // tambahin ini biar data v4 beneran ke-wipe
+  "rsvp_risky_cita_v4",
+  "rsvp_risky_cita_v5" // tambahin ini biar data v4 beneran ke-wipe
 ];
 
 function loadEntries() {

@@ -27,8 +27,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
+  padding-top: 2%;
 }
 
 .title {
@@ -36,7 +37,7 @@
   font-weight: 400;
   color: var(--accent-ink);
   font-size: clamp(30px, 4.6vw, 56px);
-  margin: 0 0 16px;
+  margin: 0 0 clamp(10px, 1.5vw, 16px);
 }
 
 .text {
@@ -69,4 +70,10 @@
   height: auto;
   transform: rotate(18deg);
   z-index: 1;
+}
+
+@media (max-width: 560px) {
+  .content { left: 17%; }
+  .title { font-size: clamp(27px, 8vw, 38px); }
+  .text { font-size: 14px; line-height: 1.6; }
 }

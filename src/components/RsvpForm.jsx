@@ -6,17 +6,24 @@ export default function RsvpForm({ onSubmit }) {
   const [attendance, setAttendance] = useState("hadir");
   const [guests, setGuests] = useState("1");
   const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    if (!name.trim()) return;
+    if (!name.trim() || submitting) return;
 
-    onSubmit({ name: name.trim(), attendance, guests, message: message.trim() });
+    setSubmitting(true);
+    try {
+      const result = await onSubmit({ name: name.trim(), attendance, guests, message: message.trim() });
+      if (result === false) return;
 
-    setName("");
-    setAttendance("hadir");
-    setGuests("1");
-    setMessage("");
+      setName("");
+      setAttendance("hadir");
+      setGuests("1");
+      setMessage("");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -39,6 +46,7 @@ export default function RsvpForm({ onSubmit }) {
           <div className={styles.seg}>
             <button
               type="button"
+              disabled={submitting}
               className={attendance === "hadir" ? styles.active : ""}
               onClick={() => setAttendance("hadir")}
             >
@@ -46,6 +54,7 @@ export default function RsvpForm({ onSubmit }) {
             </button>
             <button
               type="button"
+              disabled={submitting}
               className={attendance === "tidak" ? styles.active : ""}
               onClick={() => setAttendance("tidak")}
             >
@@ -56,7 +65,7 @@ export default function RsvpForm({ onSubmit }) {
 
         <div className={styles.field}>
           <label htmlFor="rGuests">Jumlah Tamu</label>
-          <select id="rGuests" value={guests} onChange={(e) => setGuests(e.target.value)}>
+          <select id="rGuests" value={guests} onChange={(e) => setGuests(e.target.value)} disabled={submitting}>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -71,14 +80,19 @@ export default function RsvpForm({ onSubmit }) {
             placeholder="Tuliskan ucapan dan doa untuk Risky & Cita"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            disabled={submitting}
           />
         </div>
 
-        <button type="submit" className={styles.submit}>
-          Kirim Konfirmasi
+        <button type="submit" className={styles.submit} disabled={submitting}>
+          {submitting ? "Mengirim..." : "Kirim Konfirmasi"}
         </button>
       </form>
-      <p className={styles.note}>Konfirmasi tersimpan di perangkat ini.</p>
+      <p className={styles.note}>
+        {import.meta.env.VITE_RSVP_ENDPOINT
+          ? "Konfirmasi tersimpan di daftar tamu."
+          : "Mode demo: konfirmasi tersimpan di perangkat ini."}
+      </p>
     </>
   );
 }

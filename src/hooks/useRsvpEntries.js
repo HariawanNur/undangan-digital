@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 // diabaikan / bersih -- dipakai tiap kali perlu "reset" data RSVP sebelum
 // undangan disebar ke tamu asli.
 const STORAGE_KEY = "rsvp_risky_cita_v6"; // naikin dari v4 ke v5
+const RSVP_ENDPOINT = import.meta.env.VITE_RSVP_ENDPOINT?.trim();
 const LEGACY_KEYS = [
   "rsvp_risky_cita",
   "rsvp_risky_cita_v2",
@@ -31,13 +32,8 @@ function persist(list) {
 }
 
 /**
- * Konfirmasi kehadiran disimpan di localStorage milik masing-masing
- * perangkat tamu. Ini cukup untuk demo/undangan sederhana, tapi TIDAK
- * terkumpul ke satu tempat yang bisa dipantau mempelai dari perangkat lain.
- *
- * Kalau butuh semua RSVP terkumpul di satu dashboard, ganti isi addEntry()
- * di bawah supaya mengirim data ke backend/API (mis. Google Sheets API,
- * Firebase, Supabase, dll) selain (atau menggantikan) localStorage.
+ * Menyimpan salinan lokal untuk guestbook dan mengirim ke Google Sheets jika
+ * VITE_RSVP_ENDPOINT sudah dikonfigurasi.
  */
 export function useRsvpEntries() {
   const [entries, setEntries] = useState([]);
@@ -46,13 +42,28 @@ export function useRsvpEntries() {
     setEntries(loadEntries());
   }, []);
 
-  function addEntry(entry) {
+  async function addEntry(entry) {
+    const nextEntry = { ...entry, at: Date.now() };
+
+    if (RSVP_ENDPOINT) {
+      const response = await fetch(RSVP_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(nextEntry),
+      });
+
+      if (!response.ok && response.type !== "opaque") {
+        throw new Error("RSVP endpoint returned an error");
+      }
+    }
+
     setEntries((prev) => {
-      const next = [...prev, { ...entry, at: Date.now() }];
+      const next = [...prev, nextEntry];
       persist(next);
       return next;
     });
   }
 
-  return { entries, addEntry };
+  return { entries, addEntry, isRemote: Boolean(RSVP_ENDPOINT) };
 }

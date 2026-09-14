@@ -16,7 +16,10 @@ export default function DateStrip({ isoDateTime }) {
       </div>
       <div className={styles.row}>
         {days.map((d) => (
-          <span key={d.date} className={`${styles.date} ${d.isTarget ? styles.target : ""}`}>
+          <span
+            key={`${d.date}-${d.label}`}
+            className={`${styles.date} ${d.isOutsideMonth ? styles.outside : ""} ${d.isTarget ? styles.target : ""}`}
+          >
             {d.date}
           </span>
         ))}

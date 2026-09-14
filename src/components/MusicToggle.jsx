@@ -12,8 +12,8 @@ export default function MusicToggle() {
       aria-pressed={enabled}
       aria-label={enabled ? "Matikan musik" : "Nyalakan musik"}
     >
-      <span className={styles.icon}>{enabled ? "🔊" : "🔇"}</span>
-      <span>{enabled ? "Musik Menyala" : "Musik Dimatikan"}</span>
+       <span className={styles.icon} aria-hidden="true">{enabled ? "◖))" : "×))"}</span>
+       <span>{enabled ? "Musik menyala" : "Musik dimatikan"}</span>
     </button>
   );
 }

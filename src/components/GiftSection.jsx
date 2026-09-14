@@ -37,7 +37,7 @@ export default function GiftSection() {
             <p className={styles.label}>{gift.label}</p>
             <p className={styles.value}>{gift.value}</p>
             <button className={styles.copyBtn} onClick={() => handleCopy(gift.value)}>
-              Copy
+               Salin nomor rekening
             </button>
           </div>
         ))}
@@ -49,7 +49,7 @@ export default function GiftSection() {
           <p className={styles.addressValue}>{address.value}</p>
           <p className={styles.addressOwner}>{address.owner}</p>
           <button className={styles.copyBtn} onClick={() => handleCopy(address.value)}>
-            Copy
+             Salin alamat
           </button>
         </div>
       )}

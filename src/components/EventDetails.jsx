@@ -18,7 +18,7 @@ export default function EventDetails() {
         <p className={styles.venue}>{event.venueName.toUpperCase()}</p>
         <p className={styles.address}>{event.address}</p>
         <a className={styles.mapsBtn} href={event.mapsUrl} target="_blank" rel="noopener noreferrer">
-          MAPS
+           Buka Google Maps <span aria-hidden="true">↗</span>
         </a>
       </div>
 

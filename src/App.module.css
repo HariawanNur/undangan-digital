@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   min-height: 100vh;
+  isolation: isolate;
   /* Awan tersebar di sepanjang halaman (menembus semua section berlatar
      langit biru), persis seperti tekstur langit di PDF -- bukan cuma
      gradasi polos. Kartu putih/hijau/krem section lain otomatis
@@ -54,12 +55,29 @@
 
 .main {
   width: 100%;
-  max-width: 1040px;
+  max-width: 820px;
   margin: 0 auto;
   opacity: 0;
   transition: opacity 0.6s ease 0.3s;
+  background: rgba(245, 239, 226, 0.78);
+  box-shadow: 0 0 80px rgba(43, 74, 78, 0.08);
 }
 
 .show {
   opacity: 1;
+}
+
+.main:focus {
+  outline: none;
+}
+
+@media (max-width: 767px) {
+  .main { max-width: 100%; box-shadow: none; }
+}
+
+@media (min-width: 768px) {
+  .main {
+    border-left: 1px solid rgba(43, 74, 78, 0.06);
+    border-right: 1px solid rgba(43, 74, 78, 0.06);
+  }
 }

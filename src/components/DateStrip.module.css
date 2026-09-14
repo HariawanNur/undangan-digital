@@ -5,8 +5,8 @@
 
 .month {
   font-size: clamp(15px, 1.5vw, 19px);
-  font-weight: 700;
-  color: #1c3a63;
+  font-weight: var(--font-weight-bold);
+  color: var(--calendar-ink);
   margin-bottom: 10px;
 }
 
@@ -20,18 +20,24 @@
 
 .dayLabel {
   font-size: clamp(10.5px, 1vw, 13px);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--rose);
 }
 
 .date {
   font-size: clamp(14px, 1.4vw, 17px);
-  color: var(--ink);
+  color: var(--calendar-ink);
   padding: 4px 0;
+  font-weight: 600;
+}
+
+.outside {
+  color: var(--calendar-muted);
 }
 
 .target {
   color: var(--rose);
+  font-weight: var(--font-weight-bold);
   border: 1.5px solid var(--rose);
   border-radius: 50%;
 }

@@ -22,11 +22,12 @@ export function useWeekStrip(isoDateTime) {
   const days = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(monday);
     d.setDate(monday.getDate() + i);
-    return {
-      label: DAY_LABELS[i],
-      date: d.getDate(),
-      isTarget: d.getDate() === targetDay && d.getMonth() === targetMonth,
-    };
+       return {
+         label: DAY_LABELS[i],
+         date: d.getDate(),
+         isOutsideMonth: d.getMonth() !== targetMonth,
+         isTarget: d.getDate() === targetDay && d.getMonth() === targetMonth,
+       };
   });
 
   return { monthName: MONTH_NAMES[targetMonth], days };

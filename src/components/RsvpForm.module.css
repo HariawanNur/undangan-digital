@@ -1,6 +1,10 @@
 .form {
   max-width: 560px;
   margin: 0 auto;
+  background: rgba(251, 247, 237, 0.72);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(18px, 3vw, 30px);
 }
 
 .field {
@@ -23,6 +27,14 @@
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 12px 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(189, 127, 110, 0.14);
+  outline: none;
 }
 .field textarea {
   resize: vertical;
@@ -72,4 +84,9 @@
   text-align: center;
   font-size: 12.5px;
   color: var(--ink-soft);
+}
+
+@media (max-width: 560px) {
+  .form { padding: 18px 16px; }
+  .seg { gap: 6px; }
 }

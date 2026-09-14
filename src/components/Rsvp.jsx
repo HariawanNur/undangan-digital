@@ -19,9 +19,14 @@ export default function Rsvp() {
   const { entries, addEntry } = useRsvpEntries();
   const showToast = useToast();
 
-  function handleSubmit(entry) {
-    addEntry(entry);
-    showToast("Terima kasih atas konfirmasinya");
+  async function handleSubmit(entry) {
+    try {
+      await addEntry(entry);
+      showToast("Terima kasih, konfirmasi berhasil dikirim");
+    } catch {
+      showToast("Konfirmasi gagal dikirim. Coba lagi ya");
+      return false;
+    }
   }
 
   function handleExport() {

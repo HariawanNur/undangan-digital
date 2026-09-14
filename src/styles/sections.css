@@ -13,8 +13,10 @@
 }
 
 .section {
-  padding: clamp(56px, 6vw, 88px) var(--section-pad-x);
+  min-height: 100svh;
+  padding: clamp(56px, 7vw, 96px) var(--section-pad-x);
   position: relative;
+  display: flow-root;
 }
 
 .section-alt {
@@ -42,4 +44,17 @@
   color: var(--ink-soft);
   font-size: clamp(14px, 1.3vw, 17px);
   margin: 0 0 30px;
+}
+
+@media (max-width: 767px) {
+  :root { --section-pad-x: 20px; }
+  .section {
+    min-height: auto;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root { --section-pad-x: clamp(32px, 6vw, 56px); }
 }

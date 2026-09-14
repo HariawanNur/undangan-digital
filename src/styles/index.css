@@ -28,9 +28,16 @@
   --gold: #ad8748;
   --line: rgba(43, 74, 78, 0.22);
   --shadow: rgba(43, 74, 78, 0.12);
+  --cover-ink: #3b3564;
+  --cover-muted: #526c6c;
+  --accent-ink: #3b3564;
+  --calendar-ink: #2b4a4e;
+  --calendar-muted: #8aa19e;
+  --font-weight-bold: 700;
 
   --font-script: "Railey", "Beau Rivage", cursive;
   --font-sans: "Sniglet", "Quicksand", sans-serif;
+  --radius-lg: 24px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,6 +52,12 @@
     --gold: #cba560;
     --line: rgba(239, 231, 214, 0.18);
     --shadow: rgba(0, 0, 0, 0.35);
+    --cover-ink: #3b3564;
+    --cover-muted: #526c6c;
+    --accent-ink: #3b3564;
+    --calendar-ink: #2b4a4e;
+    --calendar-muted: #8aa19e;
+    --font-weight-bold: 700;
   }
 }
 :root[data-theme="dark"] {
@@ -58,6 +71,12 @@
   --gold: #cba560;
   --line: rgba(239, 231, 214, 0.18);
   --shadow: rgba(0, 0, 0, 0.35);
+  --cover-ink: #3b3564;
+  --cover-muted: #526c6c;
+  --accent-ink: #3b3564;
+  --calendar-ink: #2b4a4e;
+  --calendar-muted: #8aa19e;
+  --font-weight-bold: 700;
 }
 
 * {
@@ -80,6 +99,10 @@ body {
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+body.invitation-open {
+  background: #e5f0f2;
 }
 
 @media (prefers-reduced-motion: reduce) {

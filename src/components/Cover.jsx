@@ -12,7 +12,7 @@ export default function Cover({ guestName, opened, onOpen }) {
     <section className={`${styles.cover} ${opened ? styles.closed : ""}`}>
       <div className={styles.coverInner}>
         <div className={styles.top}>
-          <p className={styles.eyebrow}>The Wedding Of</p>
+          <p className={styles.eyebrow}>A celebration of love</p>
 
           <div className={styles.nameFrameWrap}>
             <img src={nameFrame} alt="" className={styles.nameFrameImg} />
@@ -29,7 +29,7 @@ export default function Cover({ guestName, opened, onOpen }) {
 
           <div className={styles.guestBlock}>
             <p className={styles.guestLabel}>Kepada Yth.</p>
-            <p className={styles.guestLabel}>Bapak/Ibu/Sdr/i</p>
+             <p className={styles.guestLabel}>Dengan hormat kami mengundang</p>
             <div className={styles.guestPill}>
               <img src={pillLabel} alt="" className={styles.pillImg} />
               <span className={styles.guestName}>{guestName}</span>
@@ -37,8 +37,8 @@ export default function Cover({ guestName, opened, onOpen }) {
           </div>
 
           <button className={styles.openBtn} onClick={onOpen} aria-label="Buka undangan">
-            <img src={pillLabel} alt="" className={styles.pillImg} />
-            <span className={styles.pillText}>Open</span>
+             <img src={pillLabel} alt="" className={styles.pillImg} />
+             <span className={styles.pillText}>Buka Undangan <span aria-hidden="true">↗</span></span>
           </button>
         </div>
 

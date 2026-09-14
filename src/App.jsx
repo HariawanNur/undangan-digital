@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Cover from "./components/Cover";
 import OpeningQuote from "./components/OpeningQuote";
 import EventCountdown from "./components/EventCountdown";
@@ -16,15 +16,34 @@ import styles from "./App.module.css";
 
 export default function App() {
   const [opened, setOpened] = useState(false);
+  const mainRef = useRef(null);
   const guestName = useGuestName();
+
+  useEffect(() => {
+    document.body.classList.toggle("invitation-open", opened);
+    return () => document.body.classList.remove("invitation-open");
+  }, [opened]);
+
+  function openInvitation() {
+    setOpened(true);
+    window.requestAnimationFrame(() => {
+      mainRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      mainRef.current?.focus({ preventScroll: true });
+    });
+  }
 
   return (
     <ToastProvider>
       <MusicProvider active={opened}>
         <div className={styles.stage}>
-          <Cover guestName={guestName} opened={opened} onOpen={() => setOpened(true)} />
+          <Cover guestName={guestName} opened={opened} onOpen={openInvitation} />
 
-          <main className={`${styles.main} ${opened ? styles.show : ""}`}>
+          <main
+            ref={mainRef}
+            id="undangan"
+            tabIndex={-1}
+            className={`${styles.main} ${opened ? styles.show : ""}`}
+          >
             <OpeningQuote />
             <EventCountdown />
             <Couple />

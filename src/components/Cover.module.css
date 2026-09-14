@@ -65,7 +65,7 @@
 
 .nameFrameWrap {
   position: relative;
-  width: clamp(240px, 24vw, 420px);
+  width: clamp(220px, 20vw, 340px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +86,7 @@
   justify-content: center;
   gap: 0;
   font-family: var(--font-script);
-  font-size: clamp(34px, 4.2vw, 58px);
+  font-size: clamp(32px, 3.8vw, 50px);
   line-height: 1.05;
   color: var(--cover-ink);
   padding-top: 6%;
@@ -176,7 +176,7 @@
 .coupleImg {
   width: auto;
   max-width: clamp(300px, 32vw, 540px);
-  max-height: 44svh;
+  max-height: 38svh;
   object-fit: contain;
   height: auto;
   display: block;
@@ -201,7 +201,34 @@
 
 @media (min-width: 768px) {
   .coverInner { padding-left: 40px; padding-right: 40px; }
-  .coupleImg { max-width: min(42vw, 540px); max-height: 48svh; }
+  .nameFrameWrap { width: min(15vw, 260px); }
+  .nameFrameText { font-size: clamp(30px, 3.2vw, 44px); }
+  .coupleImg { max-width: min(32vw, 390px); max-height: 30svh; }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .coverInner { padding-top: 28px; padding-bottom: 16px; }
+  .nameFrameWrap { width: min(22vw, 240px); }
+  .coupleImg { max-height: 29svh; }
+  .openBtn { margin-top: 14px; }
+}
+
+@media (min-width: 1101px) {
+  .illustration {
+    position: absolute;
+    left: clamp(72px, 15vw, 520px);
+    bottom: 0;
+    width: clamp(300px, 28vw, 520px);
+    height: 56svh;
+    flex: none;
+    align-items: flex-end;
+  }
+
+  .coupleImg {
+    width: 100%;
+    max-width: none;
+    max-height: 100%;
+  }
 }
 
 @media (max-width: 480px) {

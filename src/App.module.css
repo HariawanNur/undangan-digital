@@ -50,7 +50,7 @@
     260px auto,
     250px auto,
     100% 100%;
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .main {
